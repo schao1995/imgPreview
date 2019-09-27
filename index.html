@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片预览</title>
+	<style>
+		html, body {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.imgBox img {
+			width: 300px;
+			display: block;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="imgBox">
+		<img class="imgs" src="img/01.jpg">
+		<img class="imgs" src="img/02.jpg">
+		<img class="imgs" src="img/03.jpg">
+	</div>
+	<div class="imgBox">
+		<img class="imgs" src="img/04.jpg">
+		<img class="imgs" src="img/05.jpg">
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="imgPreview.js"></script>
+<script type="text/javascript">
+	// var a = new ImgPreview("box");
+	// a.show();
+	// obj1.addEventListener('click',function(e){
+ //        var e=e||window.event;
+ //        if(e.target.nodeName.toLowerCase()=='h5'){
+ //            alert(e.target.innerHTML);
+ //        }
+
+ //    },false);
+	var imgs = document.getElementsByClassName("imgs");
+	console.log(imgs);
+    for (let i = 0; i < imgs.length; i++) {
+    	imgs[i].onclick = function () {
+	        var a = new ImgPreview(".imgs", i);
+			a.show();
+	    };
+    }
+</script>
